@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: "Hanken Grotesk", sans-serif;
+
+}
+body{
+    min-height: 100vh;
+    
+    background-color: hsl(221, 100%, 96%);
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.main{
+    background-color:hsl(0, 0%, 100%);
+    width: 650px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    display: flex;
+}
+
+.result{
+   background: hsla(241, 81%, 54%, 1);
+    border-radius: 20px 0 0 20px;
+    flex:1
+  
+}
+.score{
+    margin: 10px;
+    flex:1
+
+}
+#summary{
+    font-weight:600;
+    padding: 15px;
+}
+.marks_box{
+    margin:15px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+.one{
+    color: hsl(0, 100%, 67%);
+    background-color: hsla(0, 100%, 67%,0.1);
+}
+.two{
+     color: hsl(39, 100%, 56%);
+    background-color: hsla(39, 100%, 56%,0.1);
+}
+.three{
+    color: hsl(166, 100%, 37%);
+    background-color: hsla(166, 100%, 37%,0.1);
+
+}
+.four{
+    color: hsl(234, 85%, 45%);
+    background-color: hsla(234, 85%, 45%,0.1);
+
+}
+img{
+    margin-right: 10px;
+}
+.digits{
+    color: black;
+    font-weight: 500;
+}
+span{
+    color: hsla(224, 30%, 27%,0.5);
+}
+.button{
+    margin:15px;
+    margin-top:40px;
+    background-color: hsl(224, 30%, 27%);
+    color: white;
+    border-radius: 25px;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    /* Smooth transitions with GPU acceleration */
+    transition: background-color 0.3s ease, 
+                transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+.button:hover{
+    background-color: hsla(241, 81%, 54%, 1);
+    transform: translateY(-2px);
+}
+.button:active {
+    transform: translateY(0);
+}
+
+.result{
+    padding: 25px;
+    padding-bottom: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.display {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  
+  
+   background: radial-gradient(
+    circle at top,
+    hsla(241, 81%, 35%, 1) 0%,
+    hsla(241, 81%, 54%, 0.9) 90%,
+    hsla(241, 81%, 54%, 1) 100%
+  );
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+.display h1{
+    font-size: 64px;
+    font-weight: 900;
+    margin: 0;
+    color:hsl(0, 0%, 100%);
+}
+.display p{
+    font-size: 16px;
+    color:hsl(221, 100%, 96%,0.6) ;
+}
+.para h2{
+    color: hsl(0, 0%, 100%);
+
+}
+.para p{
+    color:hsl(221, 100%, 96%,0.6);
+}
+#result_title{
+    color:hsl(221, 100%, 96%,0.6);
+}
+
+/* Tablet screens - 769px to 1024px */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .main {
+    width: 85%;
+    max-width: 700px;
+  }
+}
+
+/* Mobile and Tablet - 768px and below */
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  .main {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    margin: 0;
+    box-shadow: none;
+    flex-direction: column;
+    min-height: 100vh;
+    /* GPU acceleration for smooth performance */
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  .result {
+    border-radius: 0 0 32px 32px;
+    padding: clamp(24px, 5vw, 36px) clamp(20px, 4vw, 30px);
+    /* Smooth transitions */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .score {
+    margin: 0;
+    padding: clamp(20px, 4vw, 30px);
+    /* Smooth transitions */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .display {
+    width: clamp(130px, 35vw, 160px);
+    height: clamp(130px, 35vw, 160px);
+    margin: clamp(15px, 3vw, 20px) auto;
+    /* Smooth scale animation */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .display h1 {
+    font-size: clamp(48px, 12vw, 56px);
+  }
+
+  .display p {
+    font-size: clamp(14px, 3.5vw, 16px);
+  }
+
+  #result_title {
+    font-size: clamp(16px, 4vw, 20px);
+    margin-bottom: 8px;
+  }
+
+  .para h2 {
+    font-size: clamp(22px, 5.5vw, 26px);
+    margin: clamp(12px, 3vw, 16px) 0 clamp(8px, 2vw, 12px) 0;
+  }
+
+  .para p {
+    font-size: clamp(15px, 3.8vw, 17px);
+    padding: 0 clamp(10px, 2vw, 15px);
+    line-height: 1.5;
+  }
+
+  #summary {
+    font-size: clamp(18px, 4.5vw, 20px);
+    padding: clamp(12px, 3vw, 16px) 0;
+  }
+
+  .marks_box {
+    margin: clamp(10px, 2.5vw, 14px) 0;
+    padding: clamp(12px, 3vw, 16px);
+    font-size: clamp(15px, 3.8vw, 17px);
+    /* Smooth hover effect with GPU acceleration */
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 0.2s ease;
+    will-change: transform;
+  }
+
+  .marks_box:active {
+    transform: scale(0.98);
+  }
+
+  .button {
+    margin: clamp(20px, 5vw, 30px) 0 clamp(10px, 2vw, 15px) 0;
+    padding: clamp(14px, 3.5vw, 18px);
+    font-size: clamp(16px, 4vw, 18px);
+    /* Smooth button animation */
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 0.3s ease;
+    will-change: transform;
+  }
+
+  .button:active {
+    transform: scale(0.97);
+  }
+
+  /* Optimize images for mobile */
+  img {
+    margin-right: clamp(8px, 2vw, 12px);
+    /* GPU acceleration */
+    transform: translateZ(0);
+  }
+
+  .name {
+    display: flex;
+    align-items: center;
+  }
+
+  .digits {
+    font-weight: 600;
+  }
+}
+
+/* Extra small mobile devices - 375px and below */
+@media (max-width: 375px) {
+  .display {
+    width: 130px;
+    height: 130px;
+  }
+
+  .display h1 {
+    font-size: 48px;
+  }
+
+  .para p {
+    font-size: 15px;
+  }
+
+  #summary {
+    font-size: 18px;
+  }
+
+  .marks_box {
+    margin: 10px 0;
+    padding: 12px;
+  }
+
+  .button {
+    margin: 20px 0 10px 0;
+    padding: 14px;
+  }
+}
+
+
+
+
+
+
+
+
